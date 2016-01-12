@@ -12,3 +12,4 @@ Werkzeug
 itsdangerous
 SQLAlchemy
 wtforms
+Fabric

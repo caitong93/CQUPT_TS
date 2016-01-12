@@ -28,7 +28,13 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'mysql://root:123456@localhost/test'
 
 
+class ProductionConfig(Config):
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+    assert SQLALCHEMY_DATABASE_URI
+
+
 config = {
     'development': DevelopmentConfig,
+    'production': ProductionConfig,
     'default': DevelopmentConfig
 }
