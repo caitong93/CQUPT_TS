@@ -1,0 +1,9 @@
+Hi, {{ user.username }},
+
+Welcome to register on CQUPT-ACM Training System.
+
+please click on the following link to confirm your account:
+
+{{ url_for('auth.confirm', token=token, _external=True) }}
+
+Note: replies to this email address are not monitored.

@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for u in all_temp_user %}
+                    <tr>
+                        <td>
+                            {{ u.username }}
+                            <a class="btn btn-sm" href="{{ url_for('main.tools_remove', username=u.username) }}" role="button">
+                                <span class="glyphicon glyphicon-remove"></span>
+                            </a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+
+    <form method="POST" class="form-inline form-add" role="form">
+        {{ form.csrf_token }}
+        <label for="name"></label> {{ form.name(class="form-control") }}
+        {{ form.submit(class="btn btn-default") }}
+    </form>
+
+    {% if OJ %}
+    <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        {% for oj in OJ %}
+                            <th>{{ oj }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                    <tr>
+                        {% for data in row %}
+                        <td>{{ data }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+    {% endif %}
+
+{% endblock %}

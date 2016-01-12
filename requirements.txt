@@ -1,0 +1,14 @@
+Flask
+Flask-Migrate
+Flask-Moment
+Flask-SQLAlchemy
+Flask-Script
+Flask-WTF
+Flask-Login
+Flask-Bootstrap
+Flask-Mysql
+
+Werkzeug
+itsdangerous
+SQLAlchemy
+wtforms

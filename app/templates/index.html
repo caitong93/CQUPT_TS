@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1> AC Statistics <small> Data from <a href="http://acm.hust.edu.cn/vjudge/toIndex.action"> Hust Virtual Judge </a></small></h1>
+    <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        {% for oj in OJ %}
+                            <th>{{ oj }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in rows %}
+                    <tr>
+                        {% for data in row %}
+                        <td>{{ data }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+    </div>
+{% endblock %}

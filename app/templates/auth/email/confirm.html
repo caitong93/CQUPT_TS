@@ -1,0 +1,10 @@
+<p>Hi, {{ user.username }},</p>
+
+<p>Welcome to register on CQUPT-ACM Training System.</p>
+
+<p>please click on the following link to confirm your account:</p>
+
+<p>{{ url_for('auth.confirm', token=token, _external=True) }}</p>
+
+<p><small>Note: replies to this email address are not monitored.</small></p>
+
